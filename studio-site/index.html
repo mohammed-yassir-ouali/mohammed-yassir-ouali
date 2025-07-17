@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alborda Studio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/script.js"></script>
+  <style>
+    /* Font classes */
+    .arabic-font {
+      font-family: 'Almarai', sans-serif;
+    }
+    
+    .english-font {
+      font-family: 'Blinker', sans-serif;
+    }
+    
+    .rtl-support {
+      direction: rtl;
+      text-align: right;
+    }
+    
+    /* Custom styles for button hover effect */
+    .app-button {
+      transition: all 0.3s ease;
+      transform: translateY(0);
+      display: inline-block;
+    }
+    
+    .app-button:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    /* Language toggle button */
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      padding: 8px 16px;
+      border: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .lang-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    }
+    
+    .lang-toggle span {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    /* Animation for language change */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.5s ease forwards;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-orange-100 via-yellow-50 to-white text-gray-900 english-font">
+
+  <!-- Language Toggle Button -->
+  <div class="lang-toggle" id="lang-toggle">
+    <span id="current-lang">EN</span>
+    <i class="fas fa-exchange-alt"></i>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col items-center justify-center text-center p-8 bg-yellow-50">
+    <img src="assets/alborda-logo.png"
+          alt="Alborda Logo"
+          class="logo-img animate-wobble-scale-once">
+      <!--<p class="fade-in" id="about-desc">Designing innovative mobile word games that engage minds and entertain players worldwide.</p>-->
+    <!-- Arrow button -->
+    <div class="arrow-down" id="scroll-down">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- Game Section -->
+  <section class="py-20 px-8 bg-white-50" id="games">
+    <div class="max-w-6xl mx-auto space-y-24">
+      <h2 class="text-6xl font-bold text-center mb-12 fade-in" id="games-title">Our Games</h2>
+
+      <div class="flex flex-col md:flex-row items-center justify-center gap-48 mx-auto max-w-4xl">
+        <img src="assets/game-screenshot.png" alt="Game Screenshot"
+          class="rounded-lg fade-left shadow-xl w-full max-w-md">
+        <div class="fade-right text-center md:text-left">
+          <h1 class="text-5xl font-semibold mb-2 arabic-font rtl-support fade-in" id="game-title">Word Odyssey</h1>
+          <p class="text-xl mb-6 arabic-font rtl-support fade-in" id="game-desc">
+            An entertaining word game that enhances intelligence and thinking. Enjoy solving words with your friends and challenge yourself at every new level.
+          </p>
+          
+          <!-- App Store Buttons -->
+          <div class="flex flex-col md:flex-row justify-center md:justify-start gap-6 fade-in">
+            <!-- iOS App Store Button -->
+            <a href="https://apps.apple.com/om/app/%D9%85%D9%84%D8%AD%D9%85%D8%A9-%D8%A7%D9%84%D9%83%D9%84%D9%85%D8%A7%D8%AA-%D9%83%D9%84%D9%85%D8%A7%D8%AA-%D9%85%D8%AA%D9%82%D8%A7%D8%B7%D8%B9%D8%A9/id6741737389" class="app-button">
+              <img src="assets/AppleButton-768x228.png" class="rounded-lg shadow-xl w-48 md:w-56">
+            </a>
+            
+            <!-- Google Play Store Button -->
+            <a href="https://play.google.com/store/apps/details?id=com.tayr.word_odyssey&hl=ar#" class="app-button">
+              <img src="assets/GoogleButton-768x226.png" class="rounded-lg shadow-xl w-48 md:w-56">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 px-8 bg-yellow-50 " id="about">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-6xl font-bold mb-4 fade-in" id="about-title">About Alborda</h2>
+      <p class="fade-in" id="about-desc">Alborda is a studio dedicated to crafting culturally-rich, fun, and educational games for Arabic-speaking audiences. Our mission is to make learning and playing go hand in hand.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 px-8 bg-white-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-6xl font-bold mb-4 fade-in" id="contact-title">Contact Us</h2>
+      <p class="fade-in" id="contact-email">Email: mohammed.yassir.ouali@alborda-games.com</p>
+    </div>
+  </section>
+</body>
+</html>
