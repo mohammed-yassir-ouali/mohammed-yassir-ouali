@@ -39,7 +39,7 @@
         document.getElementById('games-title').textContent = translations[lang].gamesTitle;
         document.getElementById('game-title').textContent = translations[lang].gameTitle;
         document.getElementById('game-desc').textContent = translations[lang].gameDesc;
-        //document.getElementById('about-title').textContent = translations[lang].aboutTitle;
+        document.getElementById('about-title').textContent = translations[lang].aboutTitle;
         document.getElementById('about-desc').textContent = translations[lang].aboutDesc;
         document.getElementById('contact-title').textContent = translations[lang].contactTitle;
         document.getElementById('contact-email').textContent = translations[lang].contactEmail;
