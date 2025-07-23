@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alborda Studio - Support</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/script.js"></script>
+  <style>
+    /* Font classes */
+    .arabic-font {
+      font-family: 'Almarai', sans-serif;
+    }
+    
+    .english-font {
+      font-family: 'Blinker', sans-serif;
+    }
+    
+    .rtl-support {
+      direction: rtl;
+      text-align: right;
+    }
+    
+    /* Custom styles for button hover effect */
+    .app-button {
+      transition: all 0.3s ease;
+      transform: translateY(0);
+      display: inline-block;
+    }
+    
+    .app-button:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    /* Language toggle button */
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      padding: 8px 16px;
+      border: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .lang-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    }
+    
+    .lang-toggle span {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    /* Animation for language change */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    /* Support Page specific styles */
+    .support-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      padding: 20px;
+    }
+    .support-content h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .support-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .support-content p, .support-content li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .support-content ul {
+      list-style-type: none;
+      padding-left: 1rem;
+    }
+    .support-content li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .support-content li:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+    }
+    .support-email {
+      color: #3b82f6;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .support-email:hover {
+      text-decoration: underline;
+    }
+    .support-link {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .support-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-orange-100 via-yellow-50 to-white text-gray-900 english-font">
+
+  <!-- Support Section -->
+  <section class="py-20 px-8 bg-yellow-50" id="support">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-6xl font-bold mb-4 english-font fade-in">📱 [ملحمة الكلمات] – Support</h2>
+    </div>
+    
+    <div class="support-content english-font fade-in">
+      <h2 class="text-3xl font-bold mb-6">Welcome to [ملحمة الكلمات] Support!</h2>
+      <p class="text-xl mb-8">Thank you for using [ملحمة الكلمات]. If you have any questions or need assistance, you're in the right place!</p>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h3 class="text-2xl font-bold mb-4 flex items-center">🛠 Common Issues & Solutions</h3>
+        <ul>
+          <li class="before:content-['🔹']">
+            <strong>The app is crashing or not working properly.</strong>
+            <ul class="mt-2 ml-4 list-disc">
+              <li>Ensure you have the latest version of the app installed.</li>
+              <li>Restart your device and try again.</li>
+              <li>If the issue continues, report it via email.</li>
+            </ul>
+          </li>
+          <li class="before:content-['🔹']">
+            <strong>How do I contact support?</strong>
+            <p class="mt-2">Email us at: <a href="mailto:yassir.oua@gmail.com" class="support-email">yassir.oua@gmail.com</a></p>
+          </li>
+          <li class="before:content-['🔹']">
+            <strong>Account Deletion:</strong>
+            <p class="mt-2">To request account deletion please, contact support.</p>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h3 class="text-2xl font-bold mb-4 flex items-center">📧 Contact Support</h3>
+        <p class="mb-4">If you need further help, please reach out to us at:</p>
+        <p class="text-lg font-medium mb-2 flex items-center">
+          <span class="mr-2">📩</span> 
+          Email: <a href="mailto:yassir.oua@gmail.com" class="support-email ml-2">yassir.oua@gmail.com</a>
+        </p>
+        <p class="text-sm text-gray-600">(We usually respond within 24-48 hours.)</p>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h3 class="text-2xl font-bold mb-4 flex items-center">🔗 Useful Links</h3>
+        <ul class="space-y-2">
+          <li><a href="privacy-policy.html" class="support-link">Privacy Policy</a></li>
+          <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" class="support-link">Terms of Service</a></li>
+        </ul>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl font-bold mb-4 flex items-center">📝 Need More Help?</h3>
+        <p>If you have additional questions or feedback, feel free to reach out. We're here to help! 🚀</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
