@@ -795,3 +795,4 @@ pubmatic.com, 155975, RESELLER, 5d62403b186f2ace
 onetag.com, 698d141faf72afe, RESELLER
 pubmatic.com, 162882, RESELLER, 5d62403b186f2ace
 video.unrulymedia.com, 335587332, RESELLER
+bidease.com, bidease_seller_26, RESELLER
