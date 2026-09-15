@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ملحمة الكلمات - Word Odyssey</title>
+  <meta name="robots" content="noindex" />
+
+  <!-- The preview a messaging app draws when the link is pasted into a chat. The crawler that
+       reads these runs no script, so it never follows the redirect below and always sees them. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ملحمة الكلمات - Word Odyssey" />
+  <meta property="og:description" content="لعبة الكلمات المتقاطعة العربية. العب، تحدَّ أصدقاءك، وتسلَّق لوحة المتصدرين." />
+  <meta property="og:image" content="https://mohammed-yassir-ouali.github.io/assets/game-icon.png" />
+  <meta property="og:url" content="https://mohammed-yassir-ouali.github.io/play" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Sends the phone to its own store, and runs here in the head rather than at the end of the
+       body so that it leaves before anything below is drawn : a player who is on a phone never
+       sees this page, he sees his store.
+       Everything that is not a phone stays and is handed both buttons instead. -->
+  <script>
+    (function () {
+      var APPLE_APP_STORE_URL = "https://apps.apple.com/om/app/%D9%85%D9%84%D8%AD%D9%85%D8%A9-%D8%A7%D9%84%D9%83%D9%84%D9%85%D8%A7%D8%AA-%D9%83%D9%84%D9%85%D8%A7%D8%AA-%D9%85%D8%AA%D9%82%D8%A7%D8%B7%D8%B9%D8%A9/id6741737389";
+      var GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=com.tayr.word_odyssey&hl=ar";
+
+      var ua = navigator.userAgent || navigator.vendor || "";
+
+      //an ipad on a recent ios calls itself a macintosh, and the touch points are what tells the
+      //two apart : without them every ipad would be left on the fallback page
+      var isIOS = /iPad|iPhone|iPod/.test(ua) ||
+                  (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/.test(ua);
+
+      var url = isIOS ? APPLE_APP_STORE_URL : (isAndroid ? GOOGLE_PLAY_URL : null);
+
+      if (url) {
+        //replace and not href : the store takes the place of this page in the history, so the
+        //back button of the player returns to the chat he came from and not to a second redirect
+        location.replace(url);
+      }
+    })();
+  </script>
+
+  <style>
+    :root {
+      --ink: #1f2430;
+      --muted: #5c6474;
+      --ground: #fffdf5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      background: var(--ground);
+      color: var(--ink);
+      font-family: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    .card { max-width: 520px; width: 100%; }
+
+    .icon {
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
+      box-shadow: 0 18px 30px -12px rgba(0, 0, 0, .35);
+    }
+
+    h1 {
+      margin: 20px 0 6px;
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    .latin {
+      margin: 0 0 18px;
+      font-size: 15px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      direction: ltr;
+    }
+
+    p.lead {
+      margin: 0 0 28px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .buttons a {
+      display: inline-block;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .buttons a:hover { transform: translateY(-6px); }
+
+    .buttons img {
+      width: 200px;
+      max-width: 44vw;
+      border-radius: 10px;
+      box-shadow: 0 12px 20px -10px rgba(0, 0, 0, .4);
+      display: block;
+    }
+
+    .home {
+      display: inline-block;
+      margin-top: 32px;
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="icon" src="../assets/game-icon.png" alt="ملحمة الكلمات" />
+
+    <h1>ملحمة الكلمات</h1>
+    <p class="latin">Word Odyssey</p>
+
+    <p class="lead">
+      حمّل اللعبة من متجرك<br />
+      <span style="font-size:15px">Get the game on your store</span>
+    </p>
+
+    <div class="buttons">
+      <a href="https://apps.apple.com/om/app/%D9%85%D9%84%D8%AD%D9%85%D8%A9-%D8%A7%D9%84%D9%83%D9%84%D9%85%D8%A7%D8%AA-%D9%83%D9%84%D9%85%D8%A7%D8%AA-%D9%85%D8%AA%D9%82%D8%A7%D8%B7%D8%B9%D8%A9/id6741737389" rel="noopener noreferrer">
+        <img src="../assets/AppleButton-768x228.png" alt="App Store" />
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.tayr.word_odyssey&amp;hl=ar" rel="noopener noreferrer">
+        <img src="../assets/GoogleButton-768x226.png" alt="Google Play" />
+      </a>
+    </div>
+
+    <a class="home" href="../">Alborda Studio</a>
+  </div>
+</body>
+</html>
